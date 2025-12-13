@@ -1,0 +1,22 @@
+### About Me
+
+Name: Serawit Shimelis Nigatu
+Field: Computer Science Student, Addis Ababa University
+Skills: HTML, CSS, C++, Python, Data Structures & Algorithms (DSA)
+Experience:
+
+  -Small and effective web projects
+  -C++ and Python projects
+  -Solved a few LeetCode problems with Python
+
+Academic Journey:
+
+  -Started in Pre-Engineering → placed in Electrical Engineering
+  -Transferred to Computer Science due to strong GPA
+
+Strengths:
+
+  -Active and committed learner
+  -Dedicated and passionate about coding and development
+
+
