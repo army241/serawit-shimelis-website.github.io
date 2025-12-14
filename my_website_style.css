@@ -1,5 +1,5 @@
 body{
-  background-color: rosybrown;
+  background-image: url(photo_2025-12-14_11-41-51.jpg);
   font-family: Arial, sans-serif;
 }
 p{
@@ -10,7 +10,7 @@ a {
     text-decoration: none;
 }
 .business-card{
-  width: 400px;
+  width: 500px;
   background-color: grey;
   padding: 20px;
   margin-top: 100px;
