@@ -12,4 +12,4 @@ This repository includes:
 - 🖼️ Profile Picture – Used on my website and portfolio  
 - 🎨 CSS File – Styling for the website  
 - 📁 Source Files – Organized and easy to understand
-- live site at: 
+- live site at: (https://army241.github.io/serawit-shimelis-website.github.io/my_website.html) 
