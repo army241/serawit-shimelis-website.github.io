@@ -259,19 +259,19 @@ li.li-project a:hover{
 }
 @keyframes words{
     0%,20%{
-        content: "Web Developer";
+        content: "A Web Developer";
     }
     21%,40%{
-        content: "Programmer";
+        content: "A Programmer";
     }
     41%,60%{
         content: "A Curious learner";
     }
     61%,80%{
-        content: "Youtuber";
+        content: "Contributer";
     }
     81%,100%{
-        content: "Software Developer";
+        content: "A Software Developer";
     }
 }
 @media(max-width: 1000px){
