@@ -291,8 +291,8 @@ li.li-project a:hover{
         font-size: 5rem;
     }
     .home-img img{
-        width: 70vh;
-        margin-top: 4rem;
-
+        width: 80%;       /* use 80% of container width */
+        max-width: 300px; /* limit max size */
+        margin-top: 2rem;
     }
 }
