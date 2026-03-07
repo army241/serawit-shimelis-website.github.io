@@ -295,4 +295,9 @@ li.li-project a:hover{
         max-width: 300px; /* limit max size */
         margin-top: 2rem;
     }
+    .home-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 }
