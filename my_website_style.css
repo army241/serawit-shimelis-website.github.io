@@ -291,13 +291,9 @@ li.li-project a:hover{
         font-size: 5rem;
     }
     .home-img img{
-        width: 80%;       /* use 80% of container width */
-        max-width: 300px; /* limit max size */
+        width: 200px;       /* fixed size for mobile */
+        height: 200px;      /* maintain circle shape */
         margin-top: 2rem;
+        object-fit: cover;  /* ensures image doesn't stretch */
     }
-    .home-img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 }
