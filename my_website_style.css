@@ -57,34 +57,34 @@ nav a:hover, nav a.active{
 
 @media(max-width: 995px){
     nav{
-        position: absolute;
+        position: relative;  /* instead of absolute */
         display: block;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #b44b4b;
-        border-bottom: 3px solid #b44b4b;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem;
-        background-color: rgb(33, 28, 28);
-        border-top: 0.1rem solid rgb(8, 0, 0);
+        flex-direction: column;
+        width: 100%;
+        background-color: rgb(33,28,28);
+        border-top: 3px solid #b44b4b;
+        margin-top: 1rem;
+        padding: 1rem 0;
+        z-index: 10;
     }
-}
+
     nav.active{
-        display: block;
+        display: flex;
     }
+
     nav a{
         display: block;
         font-size: 2rem;
-        margin: 2rem 1rem;
+        padding: 1rem 2rem;
+        margin: 0;
     }
+
     nav a:hover, nav a.active{
-        padding: 1rem;
         border-radius: 0.5rem;
         border-bottom: 3px solid #b44b4b;
-
     }
 }
+
 section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
@@ -289,11 +289,5 @@ li.li-project a:hover{
     }
     .home-content h1{
         font-size: 5rem;
-    }
-    .home-img img{
-        width: 200px;       /* fixed size for mobile */
-        height: 200px;      /* maintain circle shape */
-        margin-top: 2rem;
-        object-fit: cover;  /* ensures image doesn't stretch */
     }
 }
