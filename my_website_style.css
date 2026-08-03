@@ -255,22 +255,22 @@ body.light-mode nav a.active {
 }
 .typing-text span::after{
     content: "";
-    background-color: black;
+    background-color: transparent;
     width: calc(100% + 8px);
     height: 100%;
     position: absolute;
-    border-left: 3px solid black;
-    right: -8;
+    border-left: 3px solid #b44b4b;
+    right: -8px;
     animation: cursor 0.6s infinite;
 }
 .skills-animation span::after, .project-animation span::after{
-     content: "";
-    background-color: black;
+    content: "";
+    background-color: transparent;
     width: calc(100% + 8px);
     height: 70px;
     position: absolute;
-    border-left: 3px solid black;
-    right: -8;
+    border-left: 3px solid #b44b4b;
+    right: -8px;
     animation: cursor 0.6s infinite;
 }
 li{
