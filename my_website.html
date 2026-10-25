@@ -1,61 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="my_website_style.css">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer">
-    <link rel="icon" href="Icon.png" type="image/svg+xml">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <a href="#" class="logo">Serawit.dev</a>
 
-            <nav>
-                <a href="new_web.html" class="active">Home</a>
-                <a href="skills.html" class="#">Skills</a>
-                <a href="project.html" class="#">Projects</a>
-                <a href="Certificates.html" class="#">Certificates</a>
-                <a href="My_CV.html" class="#">CV</a>
-            </nav>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serawit Shimelis | Personal Portfolio</title>
+    <link rel="icon" href="Icon.png" type="image/png">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome & DevIcons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="my_website_style.css">
+</head>
+
+<body>
+    <!-- Dynamic Animated Wallpaper Background -->
+    <div class="dynamic-bg" id="dynamicBg"></div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="header">
+        <a href="#home" class="logo" id="siteLogo">Serawit<span>.dev</span></a>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#chess" class="nav-link">Chess & Strategy</a>
+            <a href="#certificates" class="nav-link">Certificates</a>
+            <a href="#cv" class="nav-link">CV</a>
+            <a href="chess.html" class="nav-chess-highlight" target="_blank" title="Dedicated Chess Platform"><i class="fa-solid fa-chess-knight"></i> Chess Sanctum <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.85em; margin-left: 3px;"></i></a>
+        </nav>
+
+        <div class="header-right">
             <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
-        </header>
-        <section class="home">
-            <div class="home-img">
-                <img src="photo_2025-12-22_19-34-16.jpg" alt="home-image">
+            <div class="menu-icon" id="menuIcon" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
             </div>
-            <div class="home-content">
-                <h1>Hi I am <span>Serawit</span></h1>
-                <h3 class="typing-text">I am <span></span> </h3>
-                <p class="my_text">Computer Science Student | Aspiring Software Developer</p>
-                <p class="my_text">Web & Software Projects | C++ | Python | JavaScript | LeetCode Problem Solving | Curious about Artificial Intelligence, Machine Learning, and Deep Learning. I enjoy building projects, strengthening my programming skills, and continuously learning new technologies.
-</p>
-                <div class="social-icons">
-                    <a href="https://github.com/army241" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/serawit-shimelis-5b764a3b7" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://t.me/Noistiwares" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="https://www.instagram.com/army24_1" target="_blank"><i class="fab fa-instagram"></i></a>
-                     <a href="mailto:serawitshimelis1998@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                    
-                </div>
-        
-                <a href="mailto:serawitshimelis1998@gmail.com" class="btn">Hire me</a>
-                <p id="statusMessage" class="status-message">Click the button or image to interact.</p>
-                
-            </div>
-        </section>
+        </div>
+    </header>
 
-        <script src="script.js"></script>
-    </body>
+    <!-- SECTION 1: HOME / HERO -->
+    <section class="home section-padding" id="home">
+        <div class="home-img">
+            <img id="profilePhoto" src="photo_2025-12-22_19-34-16.jpg" alt="Serawit Shimelis Profile Photo">
+            <div class="img-glow"></div>
+        </div>
+        <div class="home-content">
+            <h1 class="hero-title">Hi, I'm <span id="userName">Serawit</span></h1>
+            <h3 class="typing-text">I am <span></span></h3>
+            <p class="tagline" id="userTagline">Computer Science Student | Aspiring Software Developer & 1700 Rapid Chess Player</p>
+            <p class="bio-text" id="userBio">
+                Web & Software Projects | C++ | Python | JavaScript | LeetCode Problem Solving |
+                Chess.com: 1700 Rapid, 1400 Blitz, 1300 Bullet & African Chess Academy Level 1 Coach (Pending). I combine software engineering
+                and algorithmic reasoning with competitive chess tactics and strategy.
+            </p>
+
+            <div class="social-icons" id="socialIcons">
+                <a href="https://github.com/army241" target="_blank" id="linkGithub" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/serawit-shimelis-5b764a3b7" target="_blank" id="linkLinkedin"
+                    title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://t.me/Noistiwares" target="_blank" id="linkTelegram" title="Telegram"><i
+                        class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/army24_1" target="_blank" id="linkInstagram" title="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="chess.html" target="_blank" id="linkChess" title="Serawit's Chess Sanctum & Chess.com 1700 Profile"><i
+                        class="fa-solid fa-chess-knight"></i></a>
+                <a href="mailto:serawitshimelis1998@gmail.com" target="_blank" id="linkEmail" title="Email"><i
+                        class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <div class="hero-btns">
+                <a href="mailto:serawitshimelis1998@gmail.com" class="btn primary-btn" id="hireMeBtn">Hire Me</a>
+                <a href="chess.html" target="_blank" class="btn accent-btn" id="chessHubBtn"><i class="fa-solid fa-chess-queen"></i> Chess Sanctum</a>
+                <a href="Serawit_Shimelis_CV.pdf" target="_blank" download="Serawit_Shimelis_CV.pdf" class="btn secondary-btn"
+                    id="downloadCvBtn"><i class="fa-solid fa-download"></i> Download CV</a>
+                <a href="#cv" class="btn outline-btn" id="viewCvBtn"><i class="fa-solid fa-eye"></i> View CV</a>
+            </div>
+
+            <p id="statusMessage" class="status-message">Click the photo or buttons to interact.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SKILLS -->
+    <section class="skills-section section-padding" id="skills">
+        <div class="section-title">
+            <h2>Technical <span>Skills</span></h2>
+            <div class="title-line"></div>
+        </div>
+        <p class="section-desc" id="skillsIntro">
+            I have foundational skills in HTML5 and CSS3, with experience in Responsive Web Design.
+            I also possess knowledge of Python, strong fundamentals in C++ programming, and practical experience using
+            Git and GitHub for version control.
+        </p>
+
+        <div class="skills-grid" id="skillsList">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-python-plain colored"></i></div>
+                <h3>Python Programming</h3>
+                <p>Algorithm problem solving, automation, data logic & foundational AI engineering tools.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-cplusplus-plain colored"></i></div>
+                <h3>C++ Programming</h3>
+                <p>Strong understanding of Data Structures, Object-Oriented Programming, and low-level memory
+                    management.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-javascript-plain colored"></i></div>
+                <h3>JavaScript (ES6+)</h3>
+                <p>Interactive DOM manipulation, asynchronous fetch APIs, dynamic user interfaces, and modern ES6
+                    features.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="devicon-html5-plain colored"></i> <i
+                        class="devicon-css3-plain colored"></i></div>
+                <h3>HTML5 & CSS3</h3>
+                <p>Building responsive, modern, clean web interfaces with flexbox, grid, glassmorphism, and custom
+                    animations.</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-brands fa-git-alt" style="color: #f05032;"></i> <i
+                        class="fa-brands fa-github"></i></div>
+                <h3>Git & GitHub</h3>
+                <p>Version control management, collaboration workflow, repository management, and code tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PROJECTS -->
+    <section class="projects-section section-padding" id="projects">
+        <div class="section-title">
+            <h2>Featured <span>Projects</span></h2>
+            <div class="title-line"></div>
+        </div>
+        <p class="section-desc" id="projectsIntro">
+            Explore my web applications, freeCodeCamp challenges, school-based C++ assignments, LeetCode algorithmic
+            solutions, and personal Python projects.
+        </p>
+
+        <div class="projects-grid" id="projectsList">
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-code-branch project-folder-icon"></i>
+                    <a href="https://github.com/army241/SerawitShimelis_Portfolio/tree/main/web_projects"
+                        target="_blank" class="ext-link" title="Open Project"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <h3>Web Projects</h3>
+                <p>Collection of interactive front-end applications, responsive landing pages, dynamic JavaScript
+                    components, and UI experiments.</p>
+                <div class="project-tags">
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                    <span>Responsive</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-graduation-cap project-folder-icon"></i>
+                    <a href="https://github.com/army241/FreeCodeCamp_workshops_and_projects" target="_blank"
+                        class="ext-link" title="Open Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <h3>FreeCodeCamp Workshops & Projects</h3>
+                <p>Full spectrum of freeCodeCamp hands-on web developer projects, HTML5 form validations, layout design
+                    challenges, and JS tasks.</p>
+                <div class="project-tags">
+                    <span>freeCodeCamp</span>
+                    <span>Web Design</span>
+                    <span>Algorithms</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-laptop-code project-folder-icon"></i>
+                    <a href="https://github.com/army241/SerawitShimelis_Portfolio/tree/main/cpp_code" target="_blank"
+                        class="ext-link" title="Open Project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <h3>C++ Projects</h3>
+                <p>Object-Oriented Programming implementations, console applications, university coursework, and
+                    system-level algorithm practice in C++.</p>
+                <div class="project-tags">
+                    <span>C++</span>
+                    <span>OOP</span>
+                    <span>Data Structures</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-brands fa-python project-folder-icon"></i>
+                    <a href="https://github.com/army241/SerawitShimelis_Portfolio/tree/main/python_projects/simple_calculator_code"
+                        target="_blank" class="ext-link" title="Open Project"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <h3>Python Applications</h3>
+                <p>Utility scripts, simple calculators, text-based tools, and fundamental scripts exploring Python
+                    libraries and clean coding standards.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Scripts</span>
+                    <span>Logic</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-brain project-folder-icon"></i>
+                    <a href="https://github.com/army241/SerawitShimelis_Portfolio/tree/main/my_leetcode_solution"
+                        target="_blank" class="ext-link" title="Open Project"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <h3>LeetCode Solutions</h3>
+                <p>Documented solutions and optimized logic for LeetCode data structure and algorithm challenges solved
+                    using Python and C++.</p>
+                <div class="project-tags">
+                    <span>Algorithms</span>
+                    <span>Problem Solving</span>
+                    <span>LeetCode</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CHESS & STRATEGIC MASTERY -->
+    <section class="chess-section section-padding" id="chess">
+        <div class="section-title">
+            <h2>Chess & Strategic <span>Mastery</span></h2>
+            <div class="title-line"></div>
+        </div>
+        <p class="section-desc" id="chessIntro">
+            Competitive chess player rated <strong>1700 Rapid</strong>, <strong>1400 Blitz</strong>, and <strong>1300 Bullet</strong> on Chess.com, and candidate for <strong>Level 1 Chess Coach</strong> accreditation from the <strong>African Chess Academy</strong> (certificate pending). Fusing tactical intuition with computer science algorithmic logic.
+        </p>
+
+        <!-- Chess Key Stats Grid -->
+        <div class="chess-stats-grid">
+            <div class="chess-stat-card">
+                <div class="chess-stat-icon chesscom-badge"><i class="fa-solid fa-chess-knight"></i></div>
+                <div class="chess-stat-content">
+                    <span class="chess-stat-number">1700 Rapid</span>
+                    <span class="chess-stat-label">Chess.com Peak Rating</span>
+                    <p>Top percentile player with sharp tactical vision, deep calculation depth, and a dynamic Sicilian & London repertoire.</p>
+                </div>
+            </div>
+
+            <div class="chess-stat-card">
+                <div class="chess-stat-icon speed-badge" style="background: rgba(240, 80, 50, 0.15); color: #ff5252; border: 1px solid rgba(240, 80, 50, 0.35);"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <div class="chess-stat-content">
+                    <span class="chess-stat-number">1400 Blitz &bull; 1300 Bullet</span>
+                    <span class="chess-stat-label">Speed Chess Acuity</span>
+                    <p>High-stakes clock control, instinctive calculation, rapid threat identification, and aggressive time-trouble conversions.</p>
+                </div>
+            </div>
+
+            <div class="chess-stat-card">
+                <div class="chess-stat-icon academy-badge"><i class="fa-solid fa-award"></i></div>
+                <div class="chess-stat-content">
+                    <span class="chess-stat-number">Level 1 Coach</span>
+                    <span class="chess-stat-label">African Chess Academy (Pending)</span>
+                    <p>Certified pedagogical coaching training focused on youth mentorship, opening trees, tactical motifs, and endgame principles.</p>
+                </div>
+            </div>
+
+            <div class="chess-stat-card">
+                <div class="chess-stat-icon logic-badge"><i class="fa-solid fa-microchip"></i></div>
+                <div class="chess-stat-content">
+                    <span class="chess-stat-number">Algorithms & CS</span>
+                    <span class="chess-stat-label">Strategic Decision Trees</span>
+                    <p>Applying Minimax search theory, pruning heuristics, and spatial pattern recognition to competitive game play and coding alike.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chess Visual Graphics & Highlights Gallery -->
+        <div class="chess-showcase-container">
+            <div class="chess-showcase-card">
+                <div class="chess-img-wrapper">
+                    <img src="images/chess_tournament.jpg" alt="Competitive Chess Tournament" class="chess-showcase-img">
+                    <div class="chess-img-overlay">
+                        <span class="overlay-tag"><i class="fa-solid fa-trophy"></i> Tournament Mastery</span>
+                        <h3>Competitive 1700 Chess.com</h3>
+                        <p>Rapid and blitz tactical battles, clock management, and calculation under pressure.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chess-showcase-card">
+                <div class="chess-img-wrapper">
+                    <img src="images/chess_coaching.jpg" alt="African Chess Academy Coaching" class="chess-showcase-img">
+                    <div class="chess-img-overlay">
+                        <span class="overlay-tag"><i class="fa-solid fa-chalkboard-user"></i> African Chess Academy</span>
+                        <h3>Level 1 Coaching Pedagogy</h3>
+                        <p>Teaching tactical motifs, blunder avoidance, and structured opening preparation for rising players.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chess-showcase-card">
+                <div class="chess-img-wrapper">
+                    <img src="images/chess_strategy.jpg" alt="Strategic Computation & Chess" class="chess-showcase-img">
+                    <div class="chess-img-overlay">
+                        <span class="overlay-tag"><i class="fa-solid fa-network-wired"></i> Algorithmic Mindset</span>
+                        <h3>Heuristic Analysis & Logic</h3>
+                        <p>Bridging game-tree depth calculation with competitive board intuition and problem solving.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dedicated Chess Website Feature Callout Banner -->
+        <div class="chess-portal-banner">
+            <div class="banner-content">
+                <div class="banner-badge"><i class="fa-solid fa-chess"></i> Dedicated Standalone Platform</div>
+                <h3>Enter Serawit's Chess Sanctum</h3>
+                <p>
+                    Explore my full dedicated chess web portal featuring a <strong>live interactive playable board</strong>, <strong>tactics puzzle solver</strong>, <strong>interactive opening explorer</strong> (Sicilian, Queen's Gambit, London System), <strong>live Chess.com profile inspection</strong>, and <strong>1-on-1 coaching inquiry booking</strong>.
+                </p>
+                <div class="banner-features">
+                    <span><i class="fa-solid fa-check"></i> Playable & Solvable Board</span>
+                    <span><i class="fa-solid fa-check"></i> Interactive Tactics Puzzles</span>
+                    <span><i class="fa-solid fa-check"></i> Opening Repertoire Viewer</span>
+                    <span><i class="fa-solid fa-check"></i> 1-on-1 Coaching Consultation</span>
+                </div>
+            </div>
+            <div class="banner-action">
+                <a href="chess.html" class="btn portal-btn" target="_blank">
+                    <span>Explore Chess Website</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CERTIFICATES -->
+    <section class="certificates-section section-padding" id="certificates">
+        <div class="section-title">
+            <h2>Certifications & <span>Courses</span></h2>
+            <div class="title-line"></div>
+        </div>
+        <p class="section-desc" id="certificatesIntro">
+            Verified certifications achieved through online platforms and academic coursework.
+        </p>
+
+        <div class="certificates-grid">
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-solid fa-chess-knight" style="color: #e5a93c;"></i></div>
+                <h3>Level 1 Chess Coach Certification</h3>
+                <p class="cert-issuer">African Chess Academy (Pending)</p>
+                <p class="cert-details">Accredited scholastic coaching training covering structured tactical pedagogy, opening trees, endgame fundamentals, and competitive psychology.</p>
+                <span class="badge in-progress"><i class="fa-solid fa-clock"></i> Certificate Pending</span>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                <h3>Responsive Web Design</h3>
+                <p class="cert-issuer">freeCodeCamp (Legacy & Modern V9)</p>
+                <p class="cert-details">Mastered HTML5 semantics, CSS3 grid & flexbox, accessible layout patterns, and
+                    responsive UI principles.</p>
+                <a href="https://www.freecodecamp.org/certification/fcc5e13c559-eaf8-4306-8f56-30d3ed77301d/responsive-web-design-v9"
+                    target="_blank" class="btn btn-sm">Verify Credential <i class="fa-solid fa-external-link"></i></a>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-brands fa-js"></i></div>
+                <h3>JavaScript Certification</h3>
+                <p class="cert-issuer">freeCodeCamp</p>
+                <p class="cert-details">Data structures, functional programming, DOM manipulation, object-oriented
+                    concepts, and ES6 syntax.</p>
+                <a href="https://www.freecodecamp.org/certification/fcc5e13c559-eaf8-4306-8f56-30d3ed77301d/javascript-v9"
+                    target="_blank" class="btn btn-sm">Verify Credential <i class="fa-solid fa-external-link"></i></a>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-solid fa-robot"></i></div>
+                <h3>AI Fundamentals</h3>
+                <p class="cert-issuer">IBM / Credly</p>
+                <p class="cert-details">Core concepts of Artificial Intelligence, Machine Learning techniques, Neural
+                    Networks, and ethical AI applications.</p>
+                <a href="https://www.credly.com/users/serawit-shimelis" target="_blank" class="btn btn-sm">Verify
+                    Credential <i class="fa-solid fa-external-link"></i></a>
+            </div>
+
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-solid fa-university"></i></div>
+                <h3>CS50 – Computer Science</h3>
+                <p class="cert-issuer">Harvard University (In Progress)</p>
+                <p class="cert-details">Rigorous introduction to computer science, memory management, algorithms, C,
+                    Python, and SQL architecture.</p>
+                <span class="badge in-progress"><i class="fa-solid fa-spinner fa-spin"></i> In Progress</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CV -->
+    <section class="cv-section section-padding" id="cv">
+        <div class="section-title">
+            <h2>Curriculum <span>Vitae</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="cv-wrapper">
+            <div class="cv-header-card">
+                <div>
+                    <h2>Serawit Shimelis Nigatu</h2>
+                    <p class="subtitle">Second Year Computer Science Student | Addis Ababa University</p>
+                    <p class="cv-contact"><i class="fa-solid fa-envelope"></i> serawitshimelis1998@gmail.com
+                        &nbsp;|&nbsp; <i class="fa-solid fa-phone"></i> +251 943 357 763</p>
+                </div>
+                <div class="cv-action-btns">
+                    <a href="Serawit_Shimelis_CV.pdf" target="_blank" download="Serawit_Shimelis_CV.pdf"
+                        class="btn primary-btn download-pdf-btn"><i class="fa-solid fa-file-pdf"></i> Download PDF
+                        CV</a>
+                    <button onclick="window.print()" class="btn secondary-btn print-btn"><i
+                            class="fa-solid fa-print"></i> Print CV</button>
+                </div>
+            </div>
+
+            <div class="cv-grid">
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-user"></i> Professional Profile</h3>
+                    <p>
+                        Motivated second-year Computer Science student at Addis Ababa University with a <strong>CGPA of 3.97</strong>, competitive <strong>1700-rated chess player on Chess.com</strong>, and <strong>Level 1 Chess Coach candidate</strong> (African Chess Academy).
+                        Passionate about software development, web engineering, C++ system fundamentals, game algorithms, and mentoring.
+                        A continuous learner focused on mastering modern web architectures while exploring AI & ML technologies.
+                    </p>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <div class="cv-item">
+                        <h4>Bachelor of Science in Computer Science</h4>
+                        <p class="inst">Addis Ababa University</p>
+                        <p class="meta">Second Year Student &nbsp;|&nbsp; <span class="gpa-badge">CGPA: 3.97</span></p>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-gears"></i> Technical Skills</h3>
+                    <ul class="cv-list">
+                        <li><strong>Web Development:</strong> HTML5, CSS3, Responsive Design, JavaScript (ES6+), RESTful
+                            APIs</li>
+                        <li><strong>Programming Languages:</strong> C++ (OOP & Data Structures), Python, JavaScript</li>
+                        <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Linux Shell, PostgreSQL / JSON
+                            Data Storage</li>
+                    </ul>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-list-check"></i> Projects & Highlights</h3>
+                    <div class="cv-item">
+                        <h4>Competitive Chess & Coaching Instruction</h4>
+                        <p>1700 peak rating on Chess.com; completed Level 1 Coach training with African Chess Academy (certificate pending), mentoring players in tactical calculation and opening strategy.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h4>Responsive Web Design & JS Applications</h4>
+                        <p>Built multiple dynamic web projects using HTML, CSS, and vanilla JS with state management and
+                            local storage syncing.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h4>C++ Object-Oriented Projects</h4>
+                        <p>Developed console-based software modules implementing C++ classes, pointers, and memory
+                            control.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h4>Algorithmic Problem Solving</h4>
+                        <p>Solved coding puzzles on LeetCode using Python to sharpen data structures and algorithmic
+                            thinking.</p>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-bullseye"></i> Learning Goals</h3>
+                    <ul class="cv-list">
+                        <li>Advance front-end mastery (React, modern CSS architectures, view transitions).</li>
+                        <li>Expand backend development capabilities (Node.js, Express, SQL/NoSQL databases).</li>
+                        <li>Deepen understanding of AI/ML foundations and computer science theory.</li>
+                    </ul>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-language"></i> Languages</h3>
+                    <ul class="cv-list horizontal">
+                        <li><span class="lang-tag">Amharic</span> Native</li>
+                        <li><span class="lang-tag">English</span> Professional Working Proficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Serawit Shimelis. All Rights Reserved.</p>
+            <p class="admin-hint">Tip: Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>A</kbd> anywhere or <a href="admin.html" target="_blank" style="color: var(--primary-color); text-decoration: underline;">click here</a> to access the full-screen Admin Control Panel.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>

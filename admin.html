@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin Control Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="Icon.png" type="image/png">
+</head>
+<body>
+    <!-- Dynamic Animated Wallpaper Background -->
+    <div class="dynamic-bg" id="dynamicBg"></div>
+
+    <!-- Login Screen -->
+    <div id="loginSection" class="login-container">
+        <div class="login-card">
+            <div class="logo">
+                <i class="fa-solid fa-user-shield"></i>
+                <h2>Admin Login</h2>
+            </div>
+            <p class="subtitle">Enter your admin credentials to access full portfolio management.</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="adminUsername"><i class="fa-solid fa-user"></i> Username</label>
+                    <input type="text" id="adminUsername" placeholder="Enter admin username..." required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPassword"><i class="fa-solid fa-key"></i> Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="adminPassword" placeholder="Enter admin password..." required>
+                        <button type="button" id="togglePasswordBtn" class="toggle-password-btn" aria-label="Toggle password visibility">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login to Dashboard</button>
+            </form>
+            <div id="loginError" class="alert alert-danger hidden"></div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Main Screen -->
+    <div id="dashboardSection" class="dashboard-container hidden">
+        <!-- Top Navbar -->
+        <header class="admin-header">
+            <div class="header-left">
+                <i class="fa-solid fa-sliders logo-icon"></i>
+                <div>
+                    <h1>Serawit<span>.dev</span> Control Center</h1>
+                    <p class="admin-subtitle">Full Control Content Management System</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="adminThemeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+                <a href="my_website.html" target="_blank" class="btn btn-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Site</a>
+                <button id="logoutBtn" class="btn btn-danger"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+            </div>
+        </header>
+
+        <!-- Dashboard Layout -->
+        <div class="dashboard-body">
+            <!-- Sidebar Navigation Tabs -->
+            <nav class="admin-nav">
+                <button class="nav-tab active" data-tab="tab-profile"><i class="fa-solid fa-user"></i> Profile & Hero</button>
+                <button class="nav-tab" data-tab="tab-skills"><i class="fa-solid fa-code"></i> Technical Skills</button>
+                <button class="nav-tab" data-tab="tab-projects"><i class="fa-solid fa-diagram-project"></i> Projects Section</button>
+                <button class="nav-tab" data-tab="tab-certs"><i class="fa-solid fa-award"></i> Certifications</button>
+                <button class="nav-tab" data-tab="tab-cv"><i class="fa-solid fa-file-contract"></i> Curriculum Vitae</button>
+                <button class="nav-tab" data-tab="tab-socials"><i class="fa-solid fa-share-nodes"></i> Social Links</button>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="admin-content">
+                <div id="toast" class="toast hidden"></div>
+
+                <form id="portfolioForm">
+                    <!-- Tab 1: Profile & Hero -->
+                    <div id="tab-profile" class="tab-content active">
+                        <h2><i class="fa-solid fa-id-card"></i> Profile & Hero Settings</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-font"></i> Logo Text</label>
+                                <input type="text" id="logoText" placeholder="e.g. Serawit">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-user-tag"></i> Display Name</label>
+                                <input type="text" id="profileName" placeholder="e.g. Serawit">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-heading"></i> Subtitle / Tagline</label>
+                            <input type="text" id="profileTagline" placeholder="Computer Science Student | Aspiring Software Developer">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-terminal"></i> Animated Typing Roles (Comma-separated)</label>
+                            <input type="text" id="typingText" placeholder="a Programmer, a Software Developer, a Computer Science Student">
+                            <small class="field-hint">Phrases that cycle dynamically after "I am "</small>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-paragraph"></i> Bio / About Description</label>
+                            <textarea id="profileBio" rows="4" placeholder="Enter your full bio paragraph..."></textarea>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-image"></i> Profile Photo Path / Image URL</label>
+                                <input type="text" id="profileImage" placeholder="photo_2025-12-22_19-34-16.jpg">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-envelope"></i> Hire Me Button Email</label>
+                                <input type="email" id="hireEmail" placeholder="serawitshimelis1998@gmail.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Technical Skills -->
+                    <div id="tab-skills" class="tab-content">
+                        <h2><i class="fa-solid fa-list-check"></i> Technical Skills Settings</h2>
+                        <div class="form-group">
+                            <label>Skills Overview Intro</label>
+                            <textarea id="skillsIntro" rows="3" placeholder="Describe your technical skills overview..."></textarea>
+                        </div>
+                        
+                        <div class="section-header">
+                            <h3><i class="fa-solid fa-cubes"></i> Skill Cards List</h3>
+                            <button type="button" id="addSkillBtn" class="btn btn-secondary btn-sm"><i class="fa-solid fa-plus"></i> Add Skill Card</button>
+                        </div>
+
+                        <div id="skillsListContainer" class="items-container">
+                            <!-- Dynamic skill items inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Featured Projects -->
+                    <div id="tab-projects" class="tab-content">
+                        <h2><i class="fa-solid fa-folder-open"></i> Projects Section Settings</h2>
+                        <div class="form-group">
+                            <label>Projects Section Intro</label>
+                            <textarea id="projectsIntro" rows="3" placeholder="Describe your featured projects..."></textarea>
+                        </div>
+
+                        <div class="section-header">
+                            <h3><i class="fa-solid fa-code-fork"></i> Project Cards List</h3>
+                            <button type="button" id="addProjectBtn" class="btn btn-secondary btn-sm"><i class="fa-solid fa-plus"></i> Add Project Card</button>
+                        </div>
+
+                        <div id="projectsListContainer" class="items-container">
+                            <!-- Dynamic project items inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Certifications -->
+                    <div id="tab-certs" class="tab-content">
+                        <h2><i class="fa-solid fa-certificate"></i> Certifications & Courses</h2>
+                        <div class="form-group">
+                            <label>Certifications Intro</label>
+                            <textarea id="certsIntro" rows="2" placeholder="Describe your certifications overview..."></textarea>
+                        </div>
+
+                        <div class="section-header">
+                            <h3><i class="fa-solid fa-award"></i> Certificate Cards List</h3>
+                            <button type="button" id="addCertBtn" class="btn btn-secondary btn-sm"><i class="fa-solid fa-plus"></i> Add Certificate</button>
+                        </div>
+
+                        <div id="certsListContainer" class="items-container">
+                            <!-- Dynamic cert items inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Curriculum Vitae (CV) -->
+                    <div id="tab-cv" class="tab-content">
+                        <h2><i class="fa-solid fa-file-contract"></i> Curriculum Vitae Settings</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>CV Full Name</label>
+                                <input type="text" id="cvName" placeholder="Serawit Shimelis Nigatu">
+                            </div>
+                            <div class="form-group">
+                                <label>CV Subtitle</label>
+                                <input type="text" id="cvSubtitle" placeholder="Second Year CS Student | Addis Ababa University">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>CV Contact Details Bar</label>
+                            <input type="text" id="cvContact" placeholder="serawitshimelis1998@gmail.com | +251 943 357 763">
+                        </div>
+                        <div class="form-group">
+                            <label>Professional Profile Statement</label>
+                            <textarea id="cvProfile" rows="4" placeholder="Enter full professional profile..."></textarea>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Degree Program</label>
+                                <input type="text" id="cvDegree" placeholder="Bachelor of Science in Computer Science">
+                            </div>
+                            <div class="form-group">
+                                <label>University / Institution</label>
+                                <input type="text" id="cvInstitution" placeholder="Addis Ababa University">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Education Status & CGPA</label>
+                            <input type="text" id="cvEduMeta" placeholder="Second Year Student | CGPA: 3.97">
+                        </div>
+                        <div class="form-group">
+                            <label>Learning Goals (Comma-separated or lines)</label>
+                            <textarea id="cvGoals" rows="3" placeholder="Advance front-end mastery, Expand backend capabilities..."></textarea>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Amharic Proficiency</label>
+                                <input type="text" id="cvLangAmharic" placeholder="Native">
+                            </div>
+                            <div class="form-group">
+                                <label>English Proficiency</label>
+                                <input type="text" id="cvLangEnglish" placeholder="Professional Working Proficiency">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 6: Social Links -->
+                    <div id="tab-socials" class="tab-content">
+                        <h2><i class="fa-solid fa-share-nodes"></i> Social Media & Contact Links</h2>
+                        <div class="form-group">
+                            <label><i class="fab fa-github"></i> GitHub URL</label>
+                            <input type="url" id="socialGithub" placeholder="https://github.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fab fa-linkedin"></i> LinkedIn URL</label>
+                            <input type="url" id="socialLinkedin" placeholder="https://linkedin.com/in/...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fab fa-telegram"></i> Telegram URL</label>
+                            <input type="url" id="socialTelegram" placeholder="https://t.me/...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fab fa-instagram"></i> Instagram URL</label>
+                            <input type="url" id="socialInstagram" placeholder="https://instagram.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-envelope"></i> Contact Email</label>
+                            <input type="email" id="socialEmail" placeholder="serawitshimelis1998@gmail.com">
+                        </div>
+                    </div>
+
+                    <!-- Global Save Bar -->
+                    <div class="save-bar">
+                        <button type="submit" id="saveBtn" class="btn btn-success btn-lg">
+                            <i class="fa-solid fa-floppy-disk"></i> Save & Apply All Portfolio Changes
+                        </button>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

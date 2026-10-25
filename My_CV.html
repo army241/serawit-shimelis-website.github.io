@@ -2,183 +2,157 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>My CV - Serawit Shimelis Nigatu</title>
-    <link rel="icon" href="Icon.png" type="image/svg+xml">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-<link rel="icon" href="Icon.png" type="image/svg+xml">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serawit Shimelis | Curriculum Vitae (CV)</title>
+    <link rel="icon" href="Icon.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="my_website_style.css">
+    
     <style>
-        body{
-            background-color: black;
-        }
-        
-        .cv-container {
-            max-width: 800px;
-            background-color: black;
-            margin: 50px auto;
-            padding: 30px;
-            border-radius: 10px;
+        body {
+            background-color: var(--bg-primary, #0f172a);
+            color: var(--text-primary, #f8fafc);
+            padding: 40px 20px;
             font-family: 'Poppins', sans-serif;
-            color: #b44b4b;
-            border: 2px solid #b44b4b;
-            box-shadow: 1px 1px 2px b44b4b;
         }
-
-        .cv-header {
-            text-align: center;
+        .standalone-cv-container {
+            max-width: 900px;
+            margin: 0 auto;
         }
-
-        .cv-header h1 {
-            margin-bottom: 5px;
-        }
-
-        .cv-header p {
-            margin: 3px 0;
-        }
-
-        .cv-section {
-            margin-top: 25px;
-        }
-
-        .cv-section h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
-
-        ul {
-            margin-left: 20px;
-        }
-        .back{
+        .top-nav-bar {
             display: flex;
-            justify-content: center;
-            margin: 50px auto;
-         
-    padding: 1rem 2.8rem;
-    background-color: black;
-    border-radius: 4rem;
-    font-size: 1.2rem;
-    color: #b44b4b;
-    font-weight: 600;
-    letter-spacing: 0.3rem;
-    border: 1px solid #b44b4b;
-    transition: 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
-
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
-        .back:hover{
-            transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 0 25px solid #b44b4b;
-    color: rgb(98, 94, 94);
-    background-color: #b44b4b;
+        .back-link {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: #60a5fa;
+        }
+        .action-group {
+            display: flex;
+            gap: 12px;
+        }
+        @media print {
+            .top-nav-bar, .print-btn, .download-pdf-btn {
+                display: none !important;
+            }
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+                padding: 0 !important;
+            }
+            .cv-header-card, .cv-block {
+                background: #ffffff !important;
+                border: 1px solid #ddd !important;
+                color: #000000 !important;
+                box-shadow: none !important;
+            }
         }
     </style>
 </head>
-
 <body>
 
+    <div class="standalone-cv-container">
+        <div class="top-nav-bar">
+            <a href="my_website.html#home" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Main Portfolio</a>
+            <div class="action-group">
+                <a href="Serawit_Shimelis_CV.pdf" target="_blank" download="Serawit_Shimelis_CV.pdf" class="btn primary-btn"><i class="fa-solid fa-file-pdf"></i> Download PDF CV</a>
+                <button onclick="window.print()" class="btn secondary-btn"><i class="fa-solid fa-print"></i> Print CV</button>
+            </div>
+        </div>
 
-<div class="cv-container">
+        <div class="cv-wrapper">
+            <div class="cv-header-card">
+                <div>
+                    <h1 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 5px;">Serawit Shimelis Nigatu</h1>
+                    <p class="subtitle" style="font-size: 1.1rem; color: #38bdf8;">Second Year Computer Science Student | Addis Ababa University</p>
+                    <p class="cv-contact" style="margin-top: 10px; color: #94a3b8; font-size: 0.95rem;">
+                        <i class="fa-solid fa-envelope"></i> serawitshimelis1998@gmail.com &nbsp;|&nbsp; 
+                        <i class="fa-solid fa-phone"></i> +251 943 357 763 &nbsp;|&nbsp; 
+                        <i class="fa-solid fa-location-dot"></i> Addis Ababa, Ethiopia
+                    </p>
+                </div>
+            </div>
 
-    <!-- HEADER -->
-    <div class="cv-header">
-        <h1>Serawit Shimelis Nigatu</h1>
-        <p>Second Year Computer Science Student</p>
-        <p>Addis Ababa University</p>
-        <p>Email: serawitshimelis1998@gmail.com | Phone: +251 943 357 763</p>
+            <div class="cv-grid">
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-user"></i> Professional Profile</h3>
+                    <p>
+                        Motivated second-year Computer Science student at Addis Ababa University with a <strong>CGPA of 3.97</strong>. 
+                        Passionate about software development, web engineering, C++ system fundamentals, and algorithm optimization. 
+                        A continuous learner focused on mastering modern front-end and back-end frameworks while exploring AI & ML technologies.
+                    </p>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                    <div class="cv-item">
+                        <h4>Bachelor of Science in Computer Science</h4>
+                        <p class="inst">Addis Ababa University</p>
+                        <p class="meta">Second Year Student &nbsp;|&nbsp; <span class="gpa-badge">CGPA: 3.97 / 4.00</span></p>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-gears"></i> Technical Skills</h3>
+                    <ul class="cv-list">
+                        <li><strong>Web Development:</strong> HTML5, CSS3, Responsive Design, JavaScript (ES6+), RESTful APIs</li>
+                        <li><strong>Programming Languages:</strong> C++ (OOP & Data Structures), Python, JavaScript</li>
+                        <li><strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Linux Shell, PostgreSQL / JSON Data Storage</li>
+                    </ul>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-list-check"></i> Featured Projects</h3>
+                    <div class="cv-item">
+                        <h4>Responsive Web Design & JS Applications</h4>
+                        <p>Built dynamic web projects using HTML, CSS, and vanilla JS with state management and local storage syncing.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h4>C++ Object-Oriented Projects</h4>
+                        <p>Developed console-based software modules implementing C++ classes, pointers, and memory control.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h4>Algorithmic Problem Solving</h4>
+                        <p>Solved coding puzzles on LeetCode using Python and C++ to sharpen data structures and algorithmic thinking.</p>
+                    </div>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-award"></i> Certifications</h3>
+                    <ul class="cv-list">
+                        <li><strong>Responsive Web Design:</strong> freeCodeCamp</li>
+                        <li><strong>JavaScript Algorithms & Data Structures:</strong> freeCodeCamp</li>
+                        <li><strong>Artificial Intelligence Fundamentals:</strong> IBM / Credly</li>
+                        <li><strong>CS50 - Introduction to Computer Science:</strong> Harvard University (In Progress)</li>
+                    </ul>
+                </div>
+
+                <div class="cv-block">
+                    <h3><i class="fa-solid fa-language"></i> Languages</h3>
+                    <ul class="cv-list horizontal">
+                        <li><span class="lang-tag">Amharic</span> Native</li>
+                        <li><span class="lang-tag">English</span> Professional Working Proficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- PROFILE -->
-    <div class="cv-section">
-        <h2>Profile</h2>
-        <p>
-            Motivated second-year Computer Science student with strong academic performance (CGPA: 3.97) 
-            and a passion for software development. Experienced in web development, C++ programming, 
-            and Python problem-solving. Currently working on class-based projects, also building interactive website projects using JavaScript and building practical coding skills. 
-            Seeking to expand front-end and back-end development knowledge.
-        </p>
-    </div>
-
-    <!-- EDUCATION -->
-    <div class="cv-section">
-        <h2>Education</h2>
-        <ul>
-            <li>
-                <strong>Bachelor of Science in Computer Science</strong><br>
-                Addis Ababa University<br>
-                <em>Second Year Student | CGPA: 3.97</em>
-            </li>
-        </ul>
-    </div>
-
-    <!-- TECHNICAL SKILLS -->
-    <div class="cv-section">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>Web Development: HTML, CSS, responsive web design (freeCodeCamp), JavaScript(FreeCodeCamp), SuperSimpleDev(JavaScript)</li>
-            <li>Programming: C++, Python (algorithm practice), Javascript</li>
-            <li>Tools: Git, GitHub, VS Code</li>
-        </ul>
-
-    </div>
-
-    <!-- PROJECTS & COURSEWORK -->
-    <div class="cv-section">
-        <h2>Projects & Coursework</h2>
-        <ul>
-            <li>
-                <strong>Responsive Web Design Course Projects</strong><br>
-                Completed multiple web pages with HTML & CSS as part of freeCodeCamp coursework and multiple interactive web projects using JavaScript 
-            </li>
-            <li>
-                <strong>Class-based C++ Projects</strong><br>
-                Developing small projects using C++ classes and object-oriented programming.
-            </li>
-            <li>
-                <strong>LeetCode Practice</strong><br>
-                Solving basic algorithmic problems using Python to improve problem-solving skills.
-            </li>
-        </ul>
-    </div>
-
-    <!-- LEARNING GOALS -->
-    <div class="cv-section">
-        <h2>Learning Goals</h2>
-        <ul>
-            <li>Advance front-end web development skills (React, modern frameworks)</li>
-            <li>Explore back-end development and server-side programming</li>
-            <li>Improve algorithm and data structure skills through coding practice</li>
-        </ul>
-    </div>
-
-    <!-- CERTIFICATIONS -->
-    <div class="cv-section">
-        <h2>Certifications</h2>
-        <ul>
-            <li>FreeCodeCamp Responsive Web Design(Former Legacy v8)</li>
-            <li>FreeCodeCamp Javascript</li>
- SuperSimpleDev Javascript</li>
-            <li>CS50  – Harvard University (in progress) </li>
-        </ul>
-    </div>
-
-    <!-- LANGUAGES -->
-    <div class="cv-section">
-        <h2>Languages</h2>
-        <ul>
-            <li>Amharic – Native</li>
-            <li>English – Professional</li>
-        </ul>
-    </div>
-<a href="my_website.html" class="back">Back to homePage</a>
-</div>
-
 
 </body>
 </html>

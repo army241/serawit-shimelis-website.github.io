@@ -1,0 +1,174 @@
+{
+  "profile": {
+    "logoText": "Serawit",
+    "name": "Serawit",
+    "tagline": "Computer Science Student | Aspiring Software Developer & 1700 Rapid Chess Player",
+    "typingText": [
+      "a Programmer",
+      "a Software Developer",
+      "a 1700 Rapid Chess Player",
+      "a 1400 Blitz Competitor",
+      "a 1300 Bullet Tactician",
+      "a Level 1 Chess Coach",
+      "a Computer Science Student",
+      "a Web Developer",
+      "an AI & ML Enthusiast"
+    ],
+    "bio": "Web & Software Projects | C++ | Python | JavaScript | LeetCode Problem Solving | Chess.com: 1700 Rapid, 1400 Blitz, 1300 Bullet & African Chess Academy Level 1 Coach (Pending). Curious about Artificial Intelligence, Machine Learning, and strategic algorithmic thinking.",
+    "profileImage": "photo_2025-12-22_19-34-16.jpg",
+    "hireEmail": "serawitshimelis1998@gmail.com"
+  },
+  "skills": {
+    "intro": "I have foundational skills in HTML5 and CSS3, with experience in Responsive Web Design. I also possess knowledge of Python, strong fundamentals in C++ programming, and practical experience using Git and GitHub for version control.",
+    "list": [
+      {
+        "id": "s1",
+        "icon": "devicon-python-plain colored",
+        "name": "Python Programming",
+        "desc": "Algorithm problem solving, automation, data logic & foundational AI engineering tools."
+      },
+      {
+        "id": "s2",
+        "icon": "devicon-cplusplus-plain colored",
+        "name": "C++ Programming",
+        "desc": "Strong understanding of Data Structures, Object-Oriented Programming, and low-level memory management."
+      },
+      {
+        "id": "s3",
+        "icon": "devicon-javascript-plain colored",
+        "name": "JavaScript (ES6+)",
+        "desc": "Interactive DOM manipulation, asynchronous fetch APIs, dynamic user interfaces, and modern ES6 features."
+      },
+      {
+        "id": "s4",
+        "icon": "devicon-html5-plain colored",
+        "name": "HTML5 & CSS3",
+        "desc": "Building responsive, modern, clean web interfaces with flexbox, grid, glassmorphism, and custom animations."
+      },
+      {
+        "id": "s5",
+        "icon": "fa-brands fa-git-alt",
+        "name": "Git & GitHub",
+        "desc": "Version control management, collaboration workflow, repository management, and code tracking."
+      }
+    ]
+  },
+  "projects": {
+    "intro": "Explore my web applications, freeCodeCamp challenges, school-based C++ assignments, LeetCode algorithmic solutions, and personal Python projects.",
+    "list": [
+      {
+        "id": "p1",
+        "icon": "fa-solid fa-code-branch",
+        "title": "Web Projects",
+        "url": "https://github.com/army241/SerawitShimelis_Portfolio/tree/main/web_projects",
+        "desc": "Collection of interactive front-end applications, responsive landing pages, dynamic JavaScript components, and UI experiments.",
+        "tags": "HTML/CSS, JavaScript, Responsive"
+      },
+      {
+        "id": "p2",
+        "icon": "fa-solid fa-graduation-cap",
+        "title": "FreeCodeCamp Workshops & Projects",
+        "url": "https://github.com/army241/FreeCodeCamp_workshops_and_projects",
+        "desc": "Full spectrum of freeCodeCamp hands-on web developer projects, HTML5 form validations, layout design challenges, and JS tasks.",
+        "tags": "freeCodeCamp, Web Design, Algorithms"
+      },
+      {
+        "id": "p3",
+        "icon": "fa-solid fa-laptop-code",
+        "title": "C++ Projects",
+        "url": "https://github.com/army241/SerawitShimelis_Portfolio/tree/main/cpp_code",
+        "desc": "Object-Oriented Programming implementations, console applications, university coursework, and system-level algorithm practice in C++.",
+        "tags": "C++, OOP, Data Structures"
+      },
+      {
+        "id": "p4",
+        "icon": "fa-brands fa-python",
+        "title": "Python Applications",
+        "url": "https://github.com/army241/SerawitShimelis_Portfolio/tree/main/python_projects/simple_calculator_code",
+        "desc": "Utility scripts, simple calculators, text-based tools, and fundamental scripts exploring Python libraries and clean coding standards.",
+        "tags": "Python, Scripts, Logic"
+      },
+      {
+        "id": "p5",
+        "icon": "fa-solid fa-brain",
+        "title": "LeetCode Solutions",
+        "url": "https://github.com/army241/SerawitShimelis_Portfolio/tree/main/my_leetcode_solution",
+        "desc": "Documented solutions and optimized logic for LeetCode data structure and algorithm challenges solved using Python and C++.",
+        "tags": "Algorithms, Problem Solving, LeetCode"
+      }
+    ]
+  },
+  "certificates": {
+    "intro": "Verified certifications achieved through online platforms and academic coursework.",
+    "list": [
+      {
+        "id": "c1",
+        "icon": "fa-solid fa-certificate",
+        "title": "Responsive Web Design",
+        "issuer": "freeCodeCamp (Legacy & Modern V9)",
+        "details": "Mastered HTML5 semantics, CSS3 grid & flexbox, accessible layout patterns, and responsive UI principles.",
+        "url": "https://www.freecodecamp.org/certification/fcc5e13c559-eaf8-4306-8f56-30d3ed77301d/responsive-web-design-v9",
+        "badge": ""
+      },
+      {
+        "id": "c2",
+        "icon": "fa-brands fa-js",
+        "title": "JavaScript Certification",
+        "issuer": "freeCodeCamp",
+        "details": "Data structures, functional programming, DOM manipulation, object-oriented concepts, and ES6 syntax.",
+        "url": "https://www.freecodecamp.org/certification/fcc5e13c559-eaf8-4306-8f56-30d3ed77301d/javascript-v9",
+        "badge": ""
+      },
+      {
+        "id": "c3",
+        "icon": "fa-solid fa-robot",
+        "title": "AI Fundamentals",
+        "issuer": "IBM / Credly",
+        "details": "Core concepts of Artificial Intelligence, Machine Learning techniques, Neural Networks, and ethical AI applications.",
+        "url": "https://www.credly.com/users/serawit-shimelis",
+        "badge": ""
+      },
+      {
+        "id": "c4",
+        "icon": "fa-solid fa-university",
+        "title": "CS50 – Computer Science",
+        "issuer": "Harvard University (In Progress)",
+        "details": "Rigorous introduction to computer science, memory management, algorithms, C, Python, and SQL architecture.",
+        "url": "",
+        "badge": "In Progress"
+      },
+      {
+        "id": "c5",
+        "icon": "fa-solid fa-chess-knight",
+        "title": "Level 1 Chess Coach Certification",
+        "issuer": "African Chess Academy",
+        "details": "Accredited youth & scholastic coaching methodologies, tactical pattern training, opening tree foundations, and tournament psychology.",
+        "url": "",
+        "badge": "Certificate Pending"
+      }
+    ]
+  },
+  "cv": {
+    "name": "Serawit Shimelis Nigatu",
+    "subtitle": "Second Year Computer Science Student | Addis Ababa University",
+    "contact": "serawitshimelis1998@gmail.com | +251 943 357 763",
+    "profile": "Motivated second-year Computer Science student at Addis Ababa University (CGPA 3.97), competitive chess player (1700 Rapid, 1400 Blitz, 1300 Bullet on Chess.com), and African Chess Academy Level 1 Coach (Pending). Passionate about software engineering, algorithmic logic, game tree search heuristics, and mentoring.",
+    "degree": "Bachelor of Science in Computer Science",
+    "institution": "Addis Ababa University",
+    "eduMeta": "Second Year Student | CGPA: 3.97",
+    "goals": [
+      "Advance front-end mastery (React, modern CSS architectures, view transitions).",
+      "Expand backend development capabilities (Node.js, Express, SQL/NoSQL databases).",
+      "Deepen understanding of AI/ML foundations and computer science theory."
+    ],
+    "langAmharic": "Native",
+    "langEnglish": "Professional Working Proficiency"
+  },
+  "socials": {
+    "github": "https://github.com/army241",
+    "linkedin": "https://www.linkedin.com/in/serawit-shimelis-5b764a3b7",
+    "telegram": "https://t.me/Noistiwares",
+    "instagram": "https://www.instagram.com/army24_1",
+    "email": "serawitshimelis1998@gmail.com"
+  }
+}
