@@ -26,17 +26,25 @@ function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     if (!themeToggle) return;
 
+    function renderTheme(isLight) {
+        themeToggle.innerHTML = isLight
+            ? '<i class="fa-solid fa-sun"></i> <span>Light mode</span>'
+            : '<i class="fa-solid fa-moon"></i> <span>Dark mode</span>';
+    }
+
     // Check saved preference
     const savedTheme = localStorage.getItem('chessTheme');
     if (savedTheme === 'light') {
         document.body.classList.add('light-mode');
-        themeToggle.textContent = '☀️ Light mode';
+        renderTheme(true);
+    } else {
+        renderTheme(false);
     }
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('light-mode');
         const isLightMode = document.body.classList.contains('light-mode');
-        themeToggle.textContent = isLightMode ? '☀️ Light mode' : '🌙 Dark mode';
+        renderTheme(isLightMode);
         localStorage.setItem('chessTheme', isLightMode ? 'light' : 'dark');
     });
 }
@@ -877,32 +885,64 @@ function initChesscomInspector() {
 // ----------------------------------------------------
 // 12. Coaching Inquiry Form
 // ----------------------------------------------------
+window._cachedCoachingInquiry = '';
+
 window.handleCoachingSubmit = function(e) {
     e.preventDefault();
-    const name = document.getElementById('coachStudentName').value;
-    const email = document.getElementById('coachStudentEmail').value;
-    const rating = document.getElementById('coachCurrentRating').value;
-    const goal = document.getElementById('coachPrimaryGoal').value;
-    const notes = document.getElementById('coachNotes').value;
+    const name = document.getElementById('coachStudentName').value.trim();
+    const email = document.getElementById('coachStudentEmail').value.trim();
+    const rating = document.getElementById('coachCurrentRating').value.trim();
+    const goal = document.getElementById('coachPrimaryGoal').value.trim();
+    const notes = document.getElementById('coachNotes').value.trim();
 
     const toast = document.getElementById('coachingToast');
 
-    const subject = encodeURIComponent(`Chess Coaching Inquiry: ${name} (${rating})`);
-    const body = encodeURIComponent(
-        `Hi Serawit,\n\nI would like to inquire about personalized chess coaching with you.\n\n` +
-        `• Name: ${name}\n` +
+    const subject = encodeURIComponent(`Chess Coaching Inquiry: ${name} (Rating: ${rating})`);
+    const inquiryText = 
+        `Hi Serawit,\n\nI would like to inquire about 1-on-1 personalized chess coaching with you.\n\n` +
+        `• Student Name: ${name}\n` +
         `• Email: ${email}\n` +
         `• Current Rating: ${rating}\n` +
-        `• Primary Goal: ${goal}\n` +
-        `• Notes / Chess.com ID: ${notes}\n\n` +
-        `Looking forward to scheduling a diagnostic session!`
-    );
+        `• Target Rating / Goal: ${goal}\n` +
+        `• Chess.com / Lichess Username & Notes: ${notes || 'N/A'}\n\n` +
+        `Looking forward to scheduling a diagnostic session!`;
+    const body = encodeURIComponent(inquiryText);
 
-    window.location.href = `mailto:serawitshimelis1998@gmail.com?subject=${subject}&body=${body}`;
+    window._cachedCoachingInquiry = inquiryText;
+
+    const mailtoUrl = `mailto:serawitshimelis1998@gmail.com?subject=${subject}&body=${body}`;
+    const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=serawitshimelis1998@gmail.com&su=${subject}&body=${body}`;
+
+    // Attempt default mail client
+    window.location.href = mailtoUrl;
 
     if (toast) {
         toast.className = 'coaching-toast success';
-        toast.innerHTML = `<i class="fa-solid fa-check-circle"></i> Thank you ${escapeHtml(name)}! Your coaching inquiry email is ready to send.`;
+        toast.innerHTML = `
+            <div class="toast-card-inner">
+                <p><i class="fa-solid fa-circle-check"></i> <strong>Thank you ${escapeHtml(name)}!</strong> Your coaching application has been addressed to <strong>serawitshimelis1998@gmail.com</strong>.</p>
+                <p class="toast-subtext">If your email client didn't open automatically, send directly using:</p>
+                <div class="toast-actions">
+                    <a href="${mailtoUrl}" class="toast-btn"><i class="fa-solid fa-envelope"></i> Open Mail App</a>
+                    <a href="${gmailWebUrl}" target="_blank" rel="noopener noreferrer" class="toast-btn"><i class="fa-brands fa-google"></i> Open in Gmail</a>
+                    <button type="button" class="toast-btn toast-btn-outline" onclick="copyInquiryDetails()"><i class="fa-solid fa-copy"></i> Copy Details</button>
+                </div>
+            </div>
+        `;
+    }
+};
+
+window.copyInquiryDetails = function() {
+    const text = window._cachedCoachingInquiry;
+    if (!text) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Coaching inquiry details copied to clipboard! You can paste them into an email to serawitshimelis1998@gmail.com.');
+        }).catch(() => {
+            prompt('Copy your inquiry details below:', text);
+        });
+    } else {
+        prompt('Copy your inquiry details below:', text);
     }
 };
 

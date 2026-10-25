@@ -45,7 +45,10 @@
             </nav>
 
             <div class="chess-header-actions">
-                <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon"></i>
+                    <span>Dark mode</span>
+                </button>
                 <a href="my_website.html" class="btn btn-portfolio" title="Return to Main Portfolio">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span>Portfolio</span>
@@ -379,27 +382,34 @@
                         <div class="form-row">
                             <div class="input-group">
                                 <label for="coachCurrentRating"><i class="fa-solid fa-chart-line"></i> Current Chess Rating</label>
-                                <select id="coachCurrentRating">
-                                    <option value="Beginner (<800)">Beginner (&lt; 800 ELO)</option>
-                                    <option value="Intermediate (800-1200)">Intermediate (800 - 1200 ELO)</option>
-                                    <option value="Advanced (1200-1500)">Advanced (1200 - 1500 ELO)</option>
-                                    <option value="Competitive (1500-1700+)">Competitive (1500 - 1700+ ELO)</option>
-                                </select>
+                                <input type="text" id="coachCurrentRating" placeholder="e.g. 1150 Blitz, 1250 Rapid, or Unrated" required>
                             </div>
                             <div class="input-group">
-                                <label for="coachPrimaryGoal"><i class="fa-solid fa-bullseye"></i> Primary Goal</label>
-                                <select id="coachPrimaryGoal">
-                                    <option value="Reach 1400 Blitz">Reach 1400 Blitz ELO</option>
-                                    <option value="Break 1700 Rapid">Break 1700 Rapid ELO</option>
-                                    <option value="Build Opening Repertoire">Build Repertoire (Sicilian/London)</option>
-                                    <option value="Stop Blunders">Eliminate Blunders & Improve Calculation</option>
-                                </select>
+                                <label for="coachPrimaryGoal"><i class="fa-solid fa-bullseye"></i> Target Goal / Rating</label>
+                                <input type="text" id="coachPrimaryGoal" list="goalSuggestions" placeholder="e.g. Break 1600 ELO or select milestone..." required>
+                                <datalist id="goalSuggestions">
+                                    <option value="Break 1000 ELO (Beginner Foundations & Vision)">
+                                    <option value="Reach 1200 ELO (Tactics & Traps Defense)">
+                                    <option value="Reach 1400 ELO (Intermediate Acuity & Blitz Speed)">
+                                    <option value="Break 1600 ELO (Strong Club Competitive Strategy)">
+                                    <option value="Break 1800+ ELO (Advanced Positional Mastery)">
+                                    <option value="Break 2000+ ELO (Expert / Tournament Candidate)">
+                                    <option value="Build Opening Repertoire (Sicilian, London, etc.)">
+                                    <option value="Eliminate Blunders & Deepen Calculation">
+                                    <option value="Endgame Conversion Mechanics">
+                                    <option value="Time Management & Tournament Psychology">
+                                </datalist>
                             </div>
                         </div>
 
                         <div class="input-group">
-                            <label for="coachNotes"><i class="fa-solid fa-message"></i> Chess.com Username or Specific Questions</label>
-                            <textarea id="coachNotes" rows="3" placeholder="Tell me about your favorite openings, what you struggle with, or your Chess.com username..."></textarea>
+                            <label for="coachNotes"><i class="fa-solid fa-message"></i> Chess.com / Lichess Username & Questions</label>
+                            <textarea id="coachNotes" rows="3" placeholder="Tell me about your favorite openings, what you struggle with, or your Chess.com/Lichess username..."></textarea>
+                        </div>
+
+                        <div class="form-delivery-badge">
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                            <span>Inquiries are delivered directly to Serawit's email: <strong>serawitshimelis1998@gmail.com</strong></span>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-full"><i class="fa-solid fa-paper-plane"></i> Submit Coaching Inquiry</button>
