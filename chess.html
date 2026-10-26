@@ -128,28 +128,44 @@
 
         <div class="arena-grid">
             <!-- Left: Chessboard Column -->
-            <div class="board-column">
-                <div class="board-wrapper">
+            <div class="board-column" id="boardColumn">
+                <div class="board-wrapper" id="boardWrapper">
                     <!-- Board Theme Controls & Coordinates -->
                     <div class="board-top-controls">
                         <div class="theme-selector">
                             <label for="boardThemeSelect"><i class="fa-solid fa-palette"></i> Board Style:</label>
                             <select id="boardThemeSelect">
-                                <option value="theme-crimson" selected>Serawit Crimson & Pearl</option>
-                                <option value="theme-wood">Classic Walnut & Maple</option>
+                                <option value="theme-wood" selected>Classic Wood (Chess.com)</option>
+                                <option value="theme-crimson">Serawit Crimson & Pearl</option>
                                 <option value="theme-dark">Obsidian & Slate</option>
                                 <option value="theme-emerald">Championship Green</option>
                             </select>
                         </div>
                         <div class="board-quick-actions">
+                            <button id="focusModeBtn" class="btn-icon btn-focus-trigger" title="Focus Mode: Expands the board for immersive play"><i class="fa-solid fa-expand"></i> Focus Mode</button>
                             <button id="flipBoardBtn" class="btn-icon" title="Flip Board Perspective (White/Black)"><i class="fa-solid fa-arrows-rotate"></i> Flip</button>
                             <button id="resetBoardBtn" class="btn-icon" title="Reset to Initial Position"><i class="fa-solid fa-rotate-left"></i> Reset</button>
                         </div>
                     </div>
 
+                    <!-- Top Player / Black Clock HUD -->
+                    <div class="player-hud top-hud" id="topHud">
+                        <div class="player-profile-badge">
+                            <img src="images/pieces/bk.png" alt="Black" class="hud-avatar">
+                            <div class="hud-meta">
+                                <span class="hud-name" id="blackPlayerName">Black Player</span>
+                                <span class="hud-rating">Rating: 1700</span>
+                            </div>
+                        </div>
+                        <div class="chess-clock black-clock" id="blackClock" title="Black Clock">
+                            <i class="fa-regular fa-clock"></i>
+                            <span class="clock-display" id="blackClockDisplay">10:00</span>
+                        </div>
+                    </div>
+
                     <!-- The 8x8 Interactive Chessboard -->
                     <div class="chess-board-container" id="boardContainer">
-                        <div class="board-frame theme-crimson" id="boardFrame">
+                        <div class="board-frame theme-wood" id="boardFrame">
                             <!-- Squares and pieces dynamically injected by chess.js -->
                         </div>
 
@@ -175,15 +191,49 @@
                         </div>
                     </div>
 
+                    <!-- Bottom Player / White Clock HUD -->
+                    <div class="player-hud bottom-hud" id="bottomHud">
+                        <div class="player-profile-badge">
+                            <img src="images/pieces/wk.png" alt="White" class="hud-avatar">
+                            <div class="hud-meta">
+                                <span class="hud-name" id="whitePlayerName">White Player (You)</span>
+                                <span class="hud-rating">Serawit Shimelis &bull; 1700 Rapid</span>
+                            </div>
+                        </div>
+                        <div class="chess-clock white-clock active-clock" id="whiteClock" title="White Clock">
+                            <i class="fa-regular fa-clock"></i>
+                            <span class="clock-display" id="whiteClockDisplay">10:00</span>
+                        </div>
+                    </div>
+
+                    <!-- Clock Control Toolbar & Presets -->
+                    <div class="clock-toolbar">
+                        <div class="clock-preset-group">
+                            <label for="timeControlSelect"><i class="fa-solid fa-stopwatch"></i> Clock:</label>
+                            <select id="timeControlSelect" class="time-control-select">
+                                <option value="10" selected>10 Min (Rapid)</option>
+                                <option value="5">5 Min (Blitz)</option>
+                                <option value="3">3 Min (Blitz)</option>
+                                <option value="15">15 Min (Classical)</option>
+                                <option value="0">Untimed / Casual</option>
+                            </select>
+                        </div>
+                        <div class="clock-buttons">
+                            <button id="clockToggleBtn" class="btn-clock-action" title="Start / Pause Clock"><i class="fa-solid fa-play"></i> <span id="clockToggleText">Start</span></button>
+                            <button id="clockResetBtn" class="btn-clock-action" title="Reset Clock to Selected Time"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+                        </div>
+                    </div>
+
                     <!-- Turn & Status Toast -->
                     <div class="board-status-bar" id="boardStatusBar">
                         <div class="turn-indicator">
                             <span class="turn-pill white-turn" id="turnIndicator"><i class="fa-solid fa-circle"></i> White to Move</span>
                         </div>
-                        <div class="move-feedback" id="moveFeedback">Select a piece to begin or load a tactic puzzle below.</div>
+                        <div class="move-feedback" id="moveFeedback">Select a piece to begin or load an opening variation.</div>
                     </div>
                 </div>
             </div>
+
 
             <!-- Right: Interactive Controls & Tactical Puzzles Hub -->
             <div class="controls-column">
@@ -278,28 +328,34 @@
                     </div>
 
                     <div class="openings-quick-grid">
-                        <div class="quick-opening-item" data-opening="sicilian">
-                            <strong>Sicilian Defense</strong>
-                            <span>1. e4 c5 &bull; Asymmetrical Counter-Strike</span>
-                            <button class="btn btn-sm-primary">Load 1.e4 c5</button>
+                        <div class="quick-opening-item" data-opening="scotch">
+                            <strong>The Scotch Game</strong>
+                            <span>1. e4 e5 2. Nf3 Nc6 3. d4 &bull; Direct Central Strike (White)</span>
+                            <button class="btn btn-sm-primary">Load Scotch</button>
+                        </div>
+                        <div class="quick-opening-item" data-opening="catalan">
+                            <strong>The Catalan Opening</strong>
+                            <span>1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2 &bull; Fianchetto Squeeze (White)</span>
+                            <button class="btn btn-sm-primary">Load Catalan</button>
                         </div>
                         <div class="quick-opening-item" data-opening="queens-gambit">
-                            <strong>Queen's Gambit</strong>
-                            <span>1. d4 d5 2. c4 &bull; Classical Central Domination</span>
-                            <button class="btn btn-sm-primary">Load 1.d4 d5 2.c4</button>
+                            <strong>The Queen's Gambit</strong>
+                            <span>1. d4 d5 2. c4 &bull; Classical Central Domination (White)</span>
+                            <button class="btn btn-sm-primary">Load Q-Gambit</button>
                         </div>
-                        <div class="quick-opening-item" data-opening="london">
-                            <strong>The London System</strong>
-                            <span>1. d4 d5 2. Bf4 &bull; Solid Universal Setup</span>
-                            <button class="btn btn-sm-primary">Load 1.d4 d5 2.Bf4</button>
+                        <div class="quick-opening-item" data-opening="sicilian">
+                            <strong>The Sicilian Defense</strong>
+                            <span>1. e4 c5 &bull; Asymmetrical Counter-Strike (Black)</span>
+                            <button class="btn btn-sm-primary">Load Sicilian</button>
                         </div>
-                        <div class="quick-opening-item" data-opening="ruy-lopez">
-                            <strong>Ruy Lopez (Spanish)</strong>
-                            <span>1. e4 e5 2. Nf3 Nc6 3. Bb5 &bull; Deep Strategic Battle</span>
-                            <button class="btn btn-sm-primary">Load 1.e4 e5 2.Nf3</button>
+                        <div class="quick-opening-item" data-opening="modern-defense">
+                            <strong>The Modern Defense</strong>
+                            <span>1. e4 g6 2. d4 Bg7 &bull; Hypermodern Flank Challenge (Black)</span>
+                            <button class="btn btn-sm-primary">Load Modern</button>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -576,44 +632,44 @@
         </div>
 
         <div class="openings-cards-grid">
-            <!-- Opening Card 1 -->
+            <!-- Opening Card 1: Scotch Game -->
             <div class="opening-card">
-                <div class="opening-badge black-badge">Defense as Black vs 1.e4</div>
-                <h3>The Sicilian Defense</h3>
-                <span class="moves-notation">1. e4 c5</span>
-                <p>An aggressive, unbalanced counter-attack. Instead of matching symmetry with 1...e5, Black battles for the d4 square and claims central queenside superiority.</p>
+                <div class="opening-badge white-badge">Open Game as White vs 1...e5</div>
+                <h3>The Scotch Game</h3>
+                <span class="moves-notation">1. e4 e5 2. Nf3 Nc6 3. d4</span>
+                <p>An explosive, direct central confrontational strike. White eliminates Black's e5 anchor on move 3, opening dynamic diagonals and files for rapid kingside piece activity.</p>
                 <div class="opening-features">
-                    <span><i class="fa-solid fa-check"></i> High Win Percentage</span>
-                    <span><i class="fa-solid fa-check"></i> Complex Middlegames</span>
-                    <span><i class="fa-solid fa-check"></i> Sharp Counter-Punching</span>
+                    <span><i class="fa-solid fa-check"></i> Immediate Central Dominance</span>
+                    <span><i class="fa-solid fa-check"></i> Bypasses Ruy Lopez Squeeze</span>
+                    <span><i class="fa-solid fa-check"></i> High Tactical Firepower</span>
                 </div>
                 <div class="card-action">
-                    <button class="btn btn-sm-primary btn-preview-opening" data-opening="sicilian"><i class="fa-solid fa-chess-board"></i> Load on Board</button>
+                    <button class="btn btn-sm-primary btn-preview-opening" data-opening="scotch"><i class="fa-solid fa-chess-board"></i> Load on Board</button>
                 </div>
             </div>
 
-            <!-- Opening Card 2 -->
+            <!-- Opening Card 2: Catalan Opening -->
             <div class="opening-card">
-                <div class="opening-badge white-badge">System as White vs 1...d5/Nf6</div>
-                <h3>The London System</h3>
-                <span class="moves-notation">1. d4 d5 2. Bf4</span>
-                <p>A solid, universal setup where White develops the dark-squared bishop outside the pawn chain before playing e3. Highly resistant to tactical surprises.</p>
+                <div class="opening-badge white-badge">Hypermodern Master System as White</div>
+                <h3>The Catalan Opening</h3>
+                <span class="moves-notation">1. d4 Nf6 2. c4 e6 3. g3 d5 4. Bg2</span>
+                <p>The elite choice of World Champions. Fuses the spatial dominance of the Queen's Gambit with a sniper-like fianchetto bishop (Bg2) that exerts suffocating long-range pressure across the board.</p>
                 <div class="opening-features">
-                    <span><i class="fa-solid fa-check"></i> Solid Pawn Pyramid</span>
-                    <span><i class="fa-solid fa-check"></i> King Safety First</span>
-                    <span><i class="fa-solid fa-check"></i> Ne5 Kingside Attack</span>
+                    <span><i class="fa-solid fa-check"></i> Monster Fianchetto Bishop</span>
+                    <span><i class="fa-solid fa-check"></i> Enduring Positional Strangler</span>
+                    <span><i class="fa-solid fa-check"></i> Superior Endgame Conversion</span>
                 </div>
                 <div class="card-action">
-                    <button class="btn btn-sm-primary btn-preview-opening" data-opening="london"><i class="fa-solid fa-chess-board"></i> Load on Board</button>
+                    <button class="btn btn-sm-primary btn-preview-opening" data-opening="catalan"><i class="fa-solid fa-chess-board"></i> Load on Board</button>
                 </div>
             </div>
 
-            <!-- Opening Card 3 -->
+            <!-- Opening Card 3: Queen's Gambit -->
             <div class="opening-card">
                 <div class="opening-badge white-badge">Classical as White vs 1...d5</div>
                 <h3>The Queen's Gambit</h3>
                 <span class="moves-notation">1. d4 d5 2. c4</span>
-                <p>The timeless master opening offering a wing pawn to dominate the critical d4 and e4 central squares. Tests Black's willingness to accept or defend.</p>
+                <p>The timeless foundation of positional chess. White offers a flank pawn sacrifice to dismantle Black's center and command the critical d4 and e4 outposts.</p>
                 <div class="opening-features">
                     <span><i class="fa-solid fa-check"></i> Complete Central Domain</span>
                     <span><i class="fa-solid fa-check"></i> Strong Positional Squeeze</span>
@@ -624,23 +680,40 @@
                 </div>
             </div>
 
-            <!-- Opening Card 4 -->
+            <!-- Opening Card 4: Sicilian Defense -->
             <div class="opening-card">
-                <div class="opening-badge white-badge">Open Game as White vs 1...e5</div>
-                <h3>The Ruy Lopez (Spanish Game)</h3>
-                <span class="moves-notation">1. e4 e5 2. Nf3 Nc6 3. Bb5</span>
-                <p>Chess in its purest classical essence. White targets the knight guarding the e5 pawn and initiates long-term strategic pressure on the black center.</p>
+                <div class="opening-badge black-badge">Counter-Attack as Black vs 1.e4</div>
+                <h3>The Sicilian Defense</h3>
+                <span class="moves-notation">1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4</span>
+                <p>The most aggressive and theoretically verified answer to 1.e4. Rather than matching symmetry, Black creates deep structural imbalances and fights for the c-file and queenside victory.</p>
                 <div class="opening-features">
-                    <span><i class="fa-solid fa-check"></i> Fundamental Principles</span>
-                    <span><i class="fa-solid fa-check"></i> Rich Strategic Maneuvering</span>
-                    <span><i class="fa-solid fa-check"></i> Deep Endgame Transitions</span>
+                    <span><i class="fa-solid fa-check"></i> Highest Win Rate for Black</span>
+                    <span><i class="fa-solid fa-check"></i> Asymmetrical Counter-Punching</span>
+                    <span><i class="fa-solid fa-check"></i> Rich Tactical Complexity</span>
                 </div>
                 <div class="card-action">
-                    <button class="btn btn-sm-primary btn-preview-opening" data-opening="ruy-lopez"><i class="fa-solid fa-chess-board"></i> Load on Board</button>
+                    <button class="btn btn-sm-primary btn-preview-opening" data-opening="sicilian"><i class="fa-solid fa-chess-board"></i> Load on Board</button>
+                </div>
+            </div>
+
+            <!-- Opening Card 5: Modern Defense -->
+            <div class="opening-card">
+                <div class="opening-badge black-badge">Hypermodern Defense as Black</div>
+                <h3>The Modern Defense</h3>
+                <span class="moves-notation">1. e4 g6 2. d4 Bg7 3. Nc3 d6</span>
+                <p>A hyper-flexible, provocative system where Black invites White to occupy the center, only to systematically chip away, undermine, and dismantle it using the powerful dark-square dragon bishop.</p>
+                <div class="opening-features">
+                    <span><i class="fa-solid fa-check"></i> Maximum Strategic Flexibility</span>
+                    <span><i class="fa-solid fa-check"></i> High Element of Surprise</span>
+                    <span><i class="fa-solid fa-check"></i> Deadly Diagonal Counter-Strikes</span>
+                </div>
+                <div class="card-action">
+                    <button class="btn btn-sm-primary btn-preview-opening" data-opening="modern-defense"><i class="fa-solid fa-chess-board"></i> Load on Board</button>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- SECTION 5: LIVE CHESS.COM INTEGRATION & PROFILE -->
     <section class="chesscom-section" id="chesscom-live">
