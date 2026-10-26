@@ -126,13 +126,14 @@ ul {
     align-items: center;
     justify-content: center;
     gap: 0.8rem;
-    padding: 1.2rem 2.8rem;
-    font-size: 1.5rem;
+    padding: 1.1rem 2.6rem;
+    font-size: 1.45rem;
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
     transition: var(--transition);
     border: 2px solid transparent;
+    white-space: nowrap; /* Ensures "Hire Me" and button labels stay strictly in one line */
 }
 
 .primary-btn {
@@ -157,6 +158,30 @@ ul {
     color: #fff;
     transform: translateY(-3px);
     box-shadow: var(--shadow-glow);
+}
+
+.outline-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-color);
+    color: var(--text-main);
+}
+
+.outline-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--border-accent);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+body.light-mode .outline-btn {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.12);
+    color: var(--text-main);
+}
+
+body.light-mode .outline-btn:hover {
+    background: #f3f4f6;
+    border-color: var(--primary-color);
 }
 
 .btn-sm {
@@ -442,7 +467,8 @@ ul {
 
 .hero-btns {
     display: flex;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1.4rem;
     align-items: center;
 }
 
@@ -951,7 +977,7 @@ kbd {
     100% { transform: scale(1); }
 }
 
-/* Responsive Media Queries */
+/* Responsive Media Queries (Tablets & Mobile Cellphones) */
 @media (max-width: 992px) {
     html {
         font-size: 56.25%; /* 1rem = 9px */
@@ -960,8 +986,14 @@ kbd {
     .home {
         flex-direction: column;
         text-align: center;
-        gap: 4rem;
-        padding-top: 12rem;
+        gap: 3.5rem;
+        padding-top: 11rem;
+        min-height: auto;
+    }
+
+    .home-img {
+        width: 260px;
+        height: 260px;
     }
 
     .home-content {
@@ -975,46 +1007,201 @@ kbd {
     .cv-header-card {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
+    }
+
+    .cv-action-btns {
+        justify-content: center;
+    }
+
+    .section-padding {
+        padding: 8rem 5% 5rem;
+    }
+
+    .chess-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
+    .header {
+        padding: 1.4rem 5%;
+    }
+
     .menu-icon {
         display: block;
     }
 
     .navbar {
         position: fixed;
-        top: 7rem;
+        top: 6.5rem;
         right: -100%;
-        width: 250px;
-        height: auto;
+        width: 270px;
+        max-width: 85vw;
+        max-height: calc(100vh - 8rem);
+        overflow-y: auto;
         background: var(--glass-bg);
-        backdrop-filter: blur(16px);
-        border: var(--glass-border);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--border-accent);
         border-radius: 16px;
         flex-direction: column;
-        padding: 2.5rem;
-        gap: 2rem;
-        transition: right 0.4s ease;
+        padding: 2.5rem 2rem;
+        gap: 1.8rem;
+        transition: right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
         box-shadow: var(--shadow-main);
+        z-index: 999;
     }
 
     .navbar.active {
-        right: 9%;
+        right: 5%;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: left;
+        font-size: 1.55rem;
+        padding: 0.8rem 0;
+    }
+
+    .nav-chess-highlight {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .home {
+        padding-top: 9.5rem;
+        padding-bottom: 4rem;
+        gap: 2.8rem;
+    }
+
+    .home-img {
+        width: min(230px, 60vw);
+        height: min(230px, 60vw);
     }
 
     .hero-title {
-        font-size: 4rem;
+        font-size: clamp(3.2rem, 7vw, 4.2rem);
     }
 
     .typing-text {
-        font-size: 2.4rem;
+        font-size: clamp(2rem, 5vw, 2.6rem);
+        min-height: 3.5rem;
+    }
+
+    .tagline {
+        font-size: 1.55rem;
+    }
+
+    .bio-text {
+        font-size: 1.45rem;
+        line-height: 1.65;
+        margin-bottom: 2rem;
+    }
+
+    .hero-btns {
+        gap: 1.2rem;
+    }
+
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 1.35rem;
     }
 
     .section-padding {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding: 6.5rem 5% 4rem;
+    }
+
+    .section-title h2 {
+        font-size: clamp(2.6rem, 6vw, 3.4rem);
+    }
+
+    .section-desc {
+        font-size: 1.45rem;
+        margin-bottom: 3rem;
+    }
+
+    .chess-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chess-portal-banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 2rem;
+        gap: 2.5rem;
+    }
+
+    .banner-features {
+        justify-content: center;
+    }
+
+    .portal-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 50%; /* 1rem = 8px */
+    }
+
+    .header {
+        padding: 1.2rem 4%;
+    }
+
+    .logo {
+        font-size: 2.2rem;
+    }
+
+    .theme-toggle {
+        padding: 0.6rem 1.2rem;
+        font-size: 1.15rem;
+    }
+
+    .home-img {
+        width: min(200px, 55vw);
+        height: min(200px, 55vw);
+    }
+
+    .social-icons a {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.7rem;
+    }
+
+    .hero-btns {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cv-header-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .cv-action-btns {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .cv-action-btns .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cv-block {
+        padding: 2rem 1.5rem;
+    }
+
+    .cert-card, .skill-card, .project-card {
+        padding: 2.2rem 1.8rem;
     }
 }
 

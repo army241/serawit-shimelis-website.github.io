@@ -172,7 +172,7 @@ async function initDynamicPortfolio() {
     if (portfolioData) {
         applyPortfolioData(portfolioData);
     } else {
-        startTypingEffect(["a Programmer", "a Software Developer", "a 1700 Rapid Chess Player", "a 1400 Blitz Competitor", "a 1300 Bullet Tactician", "a Level 1 Chess Coach", "a Computer Science Student", "an AI & ML Enthusiast"]);
+        startTypingEffect(["a Software Developer", "a Computer Science Student", "a Full-Stack Web Developer", "an Algorithmic Problem Solver", "an AI & ML Enthusiast", "a 1700 Rapid Chess Player", "a Level 1 Chess Coach"]);
     }
 }
 
@@ -202,7 +202,7 @@ function applyPortfolioData(data) {
         if (data.profile.typingText && Array.isArray(data.profile.typingText) && data.profile.typingText.length > 0) {
             startTypingEffect(data.profile.typingText);
         } else {
-            startTypingEffect(["a Programmer", "a Software Developer", "a 1700 Rapid Chess Player", "a 1400 Blitz Competitor", "a 1300 Bullet Tactician", "a Level 1 Chess Coach", "a Computer Science Student", "an AI & ML Enthusiast"]);
+            startTypingEffect(["a Software Developer", "a Computer Science Student", "a Full-Stack Web Developer", "an Algorithmic Problem Solver", "an AI & ML Enthusiast", "a 1700 Rapid Chess Player", "a Level 1 Chess Coach"]);
         }
     }
 

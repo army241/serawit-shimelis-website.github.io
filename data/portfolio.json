@@ -2,19 +2,17 @@
   "profile": {
     "logoText": "Serawit",
     "name": "Serawit",
-    "tagline": "Computer Science Student | Aspiring Software Developer & 1700 Rapid Chess Player",
+    "tagline": "Computer Science Student | Software Developer | Algorithmic Problem Solver & 1700 Chess Player",
     "typingText": [
-      "a Programmer",
       "a Software Developer",
-      "a 1700 Rapid Chess Player",
-      "a 1400 Blitz Competitor",
-      "a 1300 Bullet Tactician",
-      "a Level 1 Chess Coach",
       "a Computer Science Student",
-      "a Web Developer",
-      "an AI & ML Enthusiast"
+      "a Full-Stack Web Developer",
+      "an Algorithmic Problem Solver",
+      "an AI & ML Enthusiast",
+      "a 1700 Rapid Chess Player",
+      "a Level 1 Chess Coach"
     ],
-    "bio": "Web & Software Projects | C++ | Python | JavaScript | LeetCode Problem Solving | Chess.com: 1700 Rapid, 1400 Blitz, 1300 Bullet & African Chess Academy Level 1 Coach (Pending). Curious about Artificial Intelligence, Machine Learning, and strategic algorithmic thinking.",
+    "bio": "Second-year Computer Science student at Addis Ababa University (CGPA 3.97). Passionate about software engineering, web technologies, C++ system architecture, and algorithmic problem solving. Beyond code, brings sharp strategic calculation as a 1700-rated chess player and Level 1 Chess Coach candidate.",
     "profileImage": "photo_2025-12-22_19-34-16.jpg",
     "hireEmail": "serawitshimelis1998@gmail.com"
   },

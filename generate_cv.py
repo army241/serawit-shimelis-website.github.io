@@ -104,6 +104,7 @@ def create_cv_pdf(filename="Serawit_Shimelis_CV.pdf"):
         Motivated second-year Computer Science student at Addis Ababa University with a <b>CGPA of 3.97</b>. 
         Passionate about software development, web engineering, C++ system fundamentals, and algorithm optimization. 
         A continuous learner focused on mastering modern front-end and back-end frameworks while exploring AI & ML technologies.
+        Beyond software engineering, brings strategic calculation depth as a competitive 1700-rated chess player and Level 1 Chess Coach candidate.
         """
         story.append(Paragraph(profile_text, body_style))
         story.append(Spacer(1, 8))
@@ -138,7 +139,8 @@ def create_cv_pdf(filename="Serawit_Shimelis_CV.pdf"):
         projects = [
             ("Responsive Web Design & JS Applications", "Built multiple dynamic web projects using HTML, CSS, and vanilla JS with state management and local storage syncing."),
             ("C++ Object-Oriented Projects", "Developed console-based software modules implementing C++ classes, pointers, and memory control."),
-            ("Algorithmic Problem Solving", "Solved coding puzzles on LeetCode using Python to sharpen data structures and algorithmic thinking.")
+            ("Algorithmic Problem Solving", "Solved coding puzzles on LeetCode using Python to sharpen data structures and algorithmic thinking."),
+            ("Competitive Chess & Strategic Mentorship", "1700 peak rating on Chess.com; African Chess Academy Level 1 Coach candidate. Applies tactical calculation and game trees to algorithmic thinking.")
         ]
         for title, desc in projects:
             story.append(Paragraph(f"<b>{title}</b>", body_style))

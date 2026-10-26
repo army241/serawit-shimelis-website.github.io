@@ -38,6 +38,7 @@
             <nav class="chess-nav" id="chessNav">
                 <a href="#hero" class="nav-item active">Overview</a>
                 <a href="#board-arena" class="nav-item">Play & Tactics</a>
+                <a href="#beginner-book" class="nav-item">Beginner's Book</a>
                 <a href="#coaching" class="nav-item">Coaching Academy</a>
                 <a href="#openings" class="nav-item">Repertoire</a>
                 <a href="#chesscom-live" class="nav-item">Chess.com Stats</a>
@@ -150,6 +151,27 @@
                     <div class="chess-board-container" id="boardContainer">
                         <div class="board-frame theme-crimson" id="boardFrame">
                             <!-- Squares and pieces dynamically injected by chess.js -->
+                        </div>
+
+                        <!-- Pawn Promotion Selector Overlay -->
+                        <div class="promotion-modal hidden" id="promotionModal">
+                            <div class="promotion-modal-content">
+                                <span class="promotion-title">Select Promotion Piece:</span>
+                                <div class="promotion-choices" id="promotionChoices"></div>
+                            </div>
+                        </div>
+
+                        <!-- Checkmate / Stalemate Game Over Overlay -->
+                        <div class="game-over-modal hidden" id="gameOverModal">
+                            <div class="game-over-card">
+                                <div class="game-over-icon" id="gameOverIcon"><i class="fa-solid fa-trophy"></i></div>
+                                <h3 id="gameOverTitle">Checkmate!</h3>
+                                <p id="gameOverDesc">White wins by checkmate.</p>
+                                <div class="game-over-actions">
+                                    <button class="btn btn-sm-primary" id="playAgainBtn"><i class="fa-solid fa-rotate-left"></i> Play Again</button>
+                                    <button class="btn btn-outline" id="dismissGameOverBtn">Dismiss</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -282,7 +304,131 @@
         </div>
     </section>
 
-    <!-- SECTION 3: COACHING & MENTORSHIP ACADEMY -->
+    <!-- SECTION 3: UPCOMING CHESS BOOK FOR BEGINNERS -->
+    <section class="book-section" id="beginner-book">
+        <div class="section-header">
+            <span class="section-tag"><i class="fa-solid fa-book-bookmark"></i> Upcoming Book Release</span>
+            <h2>From Pawn to Tactician: <span class="gradient-red">The Beginner's Chess Playbook</span></h2>
+            <div class="header-divider"></div>
+            <p class="section-subtext">A structured, comprehensive roadmap crafted by Serawit Shimelis to master fundamental rules, eliminate blunders, and accelerate rating growth from 400 to 1500+ ELO.</p>
+        </div>
+
+        <div class="book-container">
+            <div class="book-card-showcase">
+                <div class="book-cover-3d">
+                    <div class="book-spine"></div>
+                    <div class="book-front">
+                        <div class="book-header-tag">Official Playbook</div>
+                        <div class="book-icon-crest"><i class="fa-solid fa-chess-knight"></i></div>
+                        <h3 class="book-front-title">FROM PAWN TO TACTICIAN</h3>
+                        <p class="book-front-sub">The Essential Chess Foundation Guide for Beginners</p>
+                        <div class="book-author">Serawit Shimelis</div>
+                        <div class="book-rating-tag"><i class="fa-solid fa-star"></i> 1700 Rapid &bull; African Chess Academy Coach Candidate</div>
+                    </div>
+                </div>
+                <div class="book-status-badge">
+                    <span class="badge-pulsing"><i class="fa-solid fa-circle-dot"></i> In Active Writing & Development</span>
+                </div>
+            </div>
+
+            <div class="book-info-column">
+                <div class="book-pitch">
+                    <h3>Demystifying Chess for Real, Permanent Improvement</h3>
+                    <p>
+                        Most beginner chess books either drown readers in dry notation or breeze over the subtle rules that cause over 90% of beginner losses — such as the exact conditions for castling, en passant mechanics, avoiding accidental stalemates, and calculating forcing tactics.
+                    </p>
+                    <p>
+                        Fusing competitive 1700 calculation with pedagogical coaching training from the African Chess Academy, this upcoming book provides a step-by-step masterclass designed specifically for beginners and rising club players.
+                    </p>
+                </div>
+
+                <!-- Book Chapters Breakdown -->
+                <div class="book-chapters-grid">
+                    <div class="chapter-card">
+                        <div class="chapter-number">CH 1</div>
+                        <div class="chapter-body">
+                            <h4>The Core Board Architecture</h4>
+                            <p>Piece values, squares control, the geometry of the board, and precise check vs. checkmate definitions.</p>
+                        </div>
+                    </div>
+                    <div class="chapter-card">
+                        <div class="chapter-number">CH 2</div>
+                        <div class="chapter-body">
+                            <h4>Special Rules Masterclass</h4>
+                            <p>Kingside/queenside castling legality, en passant pawn captures, and optimal pawn promotion strategies.</p>
+                        </div>
+                    </div>
+                    <div class="chapter-card">
+                        <div class="chapter-number">CH 3</div>
+                        <div class="chapter-body">
+                            <h4>Tactical Vision & Motifs</h4>
+                            <p>Forks, absolute & relative pins, skewers, discovered checks, deflections, and back-rank smothered mates.</p>
+                        </div>
+                    </div>
+                    <div class="chapter-card">
+                        <div class="chapter-number">CH 4</div>
+                        <div class="chapter-body">
+                            <h4>The Golden Opening Rules</h4>
+                            <p>Controlling the center, piece development velocity, king safety, and avoiding beginner opening traps.</p>
+                        </div>
+                    </div>
+                    <div class="chapter-card">
+                        <div class="chapter-number">CH 5</div>
+                        <div class="chapter-body">
+                            <h4>Essential Beginner Endgames</h4>
+                            <p>King & Queen mates, King & Rook ladders, opposition technique, and converting passed pawns to victory.</p>
+                        </div>
+                    </div>
+                    <div class="chapter-card">
+                        <div class="chapter-number">CH 6</div>
+                        <div class="chapter-body">
+                            <h4>Algorithmic & Mental Discipline</h4>
+                            <p>How computer science decision trees, candidate moves, and blunder-checks sharpen competitive mental stamina.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-Order / Free Excerpt Signup -->
+                <div class="book-signup-box">
+                    <div class="signup-text">
+                        <h4><i class="fa-solid fa-gift gradient-red"></i> Get the Free Chapter 1 Excerpt</h4>
+                        <p>Join the early reader list to receive "Chapter 1: The Anatomy of Checks & Mates" directly in your inbox upon release.</p>
+                    </div>
+                    <form class="book-signup-form" id="bookSignupForm" onsubmit="handleBookSignup(event)">
+                        <input type="email" id="bookReaderEmail" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Get Free Excerpt</button>
+                    </form>
+                    <div class="book-signup-feedback hidden" id="bookSignupFeedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Quick Reference: Rules Most Beginners Confuse -->
+        <div class="rules-quickref-container">
+            <h3 class="quickref-heading"><i class="fa-solid fa-circle-question gradient-red"></i> Quick Rules Guide: What Beginners Often Confuse</h3>
+            <div class="rules-grid">
+                <div class="rule-box">
+                    <div class="rule-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h4>Check vs. Checkmate vs. Stalemate</h4>
+                    <p><strong>Check:</strong> King is attacked, must escape (by moving, blocking, or capturing).<br>
+                    <strong>Checkmate:</strong> King is in check and has ZERO legal escapes = Game Over, attacker wins.<br>
+                    <strong>Stalemate:</strong> King is NOT in check, but the player has ZERO legal moves = Automatic Draw!</p>
+                </div>
+                <div class="rule-box">
+                    <div class="rule-icon"><i class="fa-solid fa-chess-rook"></i></div>
+                    <h4>Castling Rules</h4>
+                    <p>King moves 2 squares towards a Rook, Rook hops over King. <strong>Illegal if:</strong> King or Rook has moved, squares between are occupied, King is currently in check, or King passes through/lands on an attacked square.</p>
+                </div>
+                <div class="rule-box">
+                    <div class="rule-icon"><i class="fa-solid fa-person-walking-arrow-right"></i></div>
+                    <h4>En Passant Capture</h4>
+                    <p>If an opponent pawn advances 2 squares past your pawn on an adjacent file, you can capture it diagonally on the very next turn as if it had only moved 1 square forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: COACHING & MENTORSHIP ACADEMY -->
     <section class="coaching-section" id="coaching">
         <div class="section-header">
             <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> African Chess Academy Pedagogy</span>
